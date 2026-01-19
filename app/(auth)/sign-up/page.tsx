@@ -92,6 +92,14 @@ export default function SignUp() {
                     }}>
                         Sign up with Google
                     </Button>
+                    <Button variant="outline" className="w-full" onClick={async () => {
+                        await authClient.signIn.social({
+                            provider: "github",
+                            callbackURL: "/"
+                        });
+                    }}>
+                        Sign up with GitHub
+                    </Button>
                     <p className="text-sm text-center text-gray-500">
                         Already have an account?{" "}
                         <Link href="/sign-in" className="text-blue-500 hover:underline">

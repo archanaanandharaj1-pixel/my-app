@@ -154,6 +154,14 @@ export default function SignIn() {
                             }}>
                                 Sign in with Google
                             </Button>
+                            <Button variant="outline" className="w-full" onClick={async () => {
+                                await authClient.signIn.social({
+                                    provider: "github",
+                                    callbackURL: "/"
+                                });
+                            }}>
+                                Sign in with GitHub
+                            </Button>
                             <Button variant="outline" className="w-full" onClick={() => setIsOtpLogin(true)}>
                                 Login with Code
                             </Button>
